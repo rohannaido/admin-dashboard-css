@@ -14,6 +14,7 @@ body{
 .main-div{
     height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
     display: grid;
     grid-template-columns: 20% auto;
     grid-template-rows: 25% auto;
@@ -26,7 +27,7 @@ body{
     grid-area: sidebar;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 4rem repeat(10,2rem) auto;
+    grid-template-rows: 7rem repeat(10,2rem) auto;
     background-color: cadetblue;
     color: white;
 }
@@ -36,8 +37,7 @@ body{
     font-size: 2rem;
     font-weight: bold;
     display: flex;
-    align-items: center;
-    margin: 0 0 1rem 0;
+    align-items: flex-start;
 }
 
 .logo-title-div .material-symbols-outlined{
@@ -48,6 +48,7 @@ body{
     padding: 1rem 1.5rem;
     display: flex;
     align-items: flex-end;
+    font-weight: bold;
 }
 
 .material-symbols-outlined{
@@ -103,6 +104,10 @@ body{
     align-items: center;
 }
 
+.header-item-2 > p {
+    font-weight: bold;
+}
+
 .header-profile-image-div{
     width: 40px;
 }
@@ -149,13 +154,12 @@ body{
     /* border: 1px solid black; */
     grid-area: content;
     display: grid;
-    grid-template-columns: 70% auto;
+    grid-template-columns: 70% 30%;
     padding-top: 1rem;
     background-color: #f3f4f6;
 }
 
 .content-div > div{
-    /* border: 1px solid black; */
     padding: 0.5rem;
 }
 
@@ -163,11 +167,15 @@ body{
     margin: 0;
 }
 
+.content-div .projects-div{
+    padding-left: 1rem;
+}
+
 .project-items-div{
     height: 90%;
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
     gap: 1rem;
     padding: 0.5rem 0;
 }
@@ -176,6 +184,33 @@ body{
     border-radius: 0.5rem;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem 1.5rem;
+}
+
+.project-item-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.project-item-text > span:first-child{
+    font-weight: bold;
+}
+
+.project-item-text > span:nth-child(2){
+    font-size: 0.9rem;
+    color: grey;
+}
+
+.project-item .icons-div{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.project-item .icons-div span{
+    padding: 0 0.5rem;
 }
 
 .content-items-div{
@@ -214,13 +249,29 @@ body{
     text-overflow: ellipsis;
 }
 
-.announcement-item > span, p{
-    font-size: 0.8rem;
+.announcement-item > span,.announcement-item > p{
     margin: 0;
 }
 
 .announcement-item > span:first-child{
     font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.announcement-item > p{
+    font-size: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    color: rgb(88, 88, 88);
+}
+
+.announcement-line-div{
+    height: 1px;
+    background-color: rgb(180, 180, 180);
+    margin: 0.5rem 0;
 }
 
 .trending-container{
@@ -241,4 +292,29 @@ body{
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
     margin: 0.5rem 0;
+}
+
+.trending-item {
+    display: flex;
+    padding: 0.4rem 0.8rem;
+}
+
+.trending-item-image-div{
+    width: 50px;
+}
+
+.trending-item-image-div > img{
+    width: 100%;
+}
+
+.trending-item-text-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1rem;
+    font-size: 0.9rem;
+}
+
+.trending-item-text-div > span:nth-child(2) {
+    color: grey;
 }
